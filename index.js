@@ -20,14 +20,14 @@ const todoList = () => {
   };
 
   const toDisplayableList = (list) => {
-    let displayString = "";
+    let displayString = [];
     list.forEach((todo) => {
       const status = todo.completed ? "[x]" : "[ ]";
       const date = todo.dueDate == today ? "" : todo.dueDate;
-      displayString += `${status} ${todo.title} ${date}\n`;
+      displayString.push(`${status} ${todo.title} ${date}`);
     });
 
-    return displayString;
+    return displayString.join("\n");
   };
 
   return {
